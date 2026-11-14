@@ -1,0 +1,69 @@
+{
+  "pipeline_status": "completed",
+  "total_duration_sec": 40.88,
+  "dataset_status": "fallback_fixtures_generated",
+  "validation_passed": true,
+  "patient_leakage_passed": true,
+  "models": {
+    "classification": {
+      "selected_architecture": "resnet50",
+      "test_metrics": {
+        "accuracy": 0.5,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1_score": 0.0,
+        "sensitivity": 0.0,
+        "specificity": 1.0,
+        "roc_auc": 0.5,
+        "pr_auc": 0.75,
+        "confusion_matrix": {
+          "tn": 2,
+          "fp": 0,
+          "fn": 2,
+          "tp": 0
+        }
+      }
+    },
+    "detection": {
+      "selected_architecture": "yolov8_svdh_joint_detector",
+      "test_metrics": {
+        "precision": 0.0781,
+        "recall": 0.0781,
+        "mAP50": 0.0781,
+        "mAP50_95": 0.0156
+      }
+    },
+    "segmentation": {
+      "selected_architecture": "unetplusplus",
+      "test_metrics": {
+        "dice": 0.1733,
+        "iou": 0.17,
+        "precision": 0.67,
+        "recall": 0.5
+      }
+    },
+    "severity": {
+      "selected_architecture": "svdh_multitask_resnet18",
+      "test_metrics": {
+        "mae": 1.0303,
+        "rmse": 1.1575,
+        "quadratic_weighted_kappa": -0.0358,
+        "ordinal_accuracy": 0.2412,
+        "be_joint_metrics": {
+          "mae": 1.0137,
+          "rmse": 1.1406,
+          "quadratic_weighted_kappa": -0.0319,
+          "ordinal_accuracy": 0.2656,
+          "within_one_accuracy": 0.8125
+        },
+        "jsn_joint_metrics": {
+          "mae": 1.047,
+          "rmse": 1.1744,
+          "quadratic_weighted_kappa": -0.0396,
+          "ordinal_accuracy": 0.2167,
+          "within_one_accuracy": 0.8333
+        }
+      }
+    }
+  }
+}

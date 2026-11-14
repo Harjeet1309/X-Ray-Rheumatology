@@ -1,0 +1,41 @@
+# Python & Bytecode
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+venv/
+.venv/
+env/
+
+# Dataset & Large Artifacts
+dataset/raw/*
+!dataset/raw/.gitkeep
+dataset/processed/*
+!dataset/processed/.gitkeep
+storage/uploads/*
+storage/overlays/*
+reports/*.pdf
+
+# MLflow & Large Model Weight Artifacts (PRD Section 23: Separate model binary storage from source code)
+experiments/mlruns/
+.dvc/cache/
+models/**/*.pth
+models/**/*.pt
+
+# Database & Env
+*.db
+*.sqlite3
+.env
+.env.local
+
+# Node / Next.js
+frontend/node_modules/
+frontend/.next/
+frontend/out/
+
+# IDE & OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db

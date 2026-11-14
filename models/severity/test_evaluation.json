@@ -1,0 +1,26 @@
+{
+  "model": "severity",
+  "architecture": "svdh_multitask_resnet18",
+  "version": "1.0.0",
+  "split": "test",
+  "metrics": {
+    "mae": 1.0303,
+    "rmse": 1.1575,
+    "quadratic_weighted_kappa": -0.0358,
+    "ordinal_accuracy": 0.2412,
+    "be_joint_metrics": {
+      "mae": 1.0137,
+      "rmse": 1.1406,
+      "quadratic_weighted_kappa": -0.0319,
+      "ordinal_accuracy": 0.2656,
+      "within_one_accuracy": 0.8125
+    },
+    "jsn_joint_metrics": {
+      "mae": 1.047,
+      "rmse": 1.1744,
+      "quadratic_weighted_kappa": -0.0396,
+      "ordinal_accuracy": 0.2167,
+      "within_one_accuracy": 0.8333
+    }
+  }
+}

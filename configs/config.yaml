@@ -1,0 +1,120 @@
+project:
+  name: "AI-Powered Rheumatological X-ray Analysis Platform"
+  version: "1.0.0"
+  disease_focus: "Rheumatoid Arthritis (RA)"
+  modality: "Hand X-ray Radiographs"
+  random_seed: 42
+
+dataset:
+  name: "RAM-H1200"
+  hf_repo_id: "TokyoTechMagicYang/RAM-H1200-v1"
+  license: "CC BY-NC-SA 4.0"
+  raw_dir: "dataset/raw"
+  processed_dir: "dataset/processed"
+  annotations_dir: "dataset/annotations"
+  splits_dir: "dataset/splits"
+  image_size: [512, 512]
+  roi_size: [128, 128]
+  clahe_clip_limit: 2.0
+  clahe_tile_grid_size: [8, 8]
+  be_joints:
+    - "MCP-T"
+    - "MCP-I"
+    - "MCP-M"
+    - "MCP-R"
+    - "MCP-S"
+    - "IP"
+    - "PIP-I"
+    - "PIP-M"
+    - "PIP-R"
+    - "PIP-S"
+    - "CMC-T"
+    - "Tm"
+    - "S"
+    - "L"
+    - "U"
+    - "R"
+  jsn_joints:
+    - "MCP-T"
+    - "MCP-I"
+    - "MCP-M"
+    - "MCP-R"
+    - "MCP-S"
+    - "PIP-I"
+    - "PIP-M"
+    - "PIP-R"
+    - "PIP-S"
+    - "STT"
+    - "SC"
+    - "SR"
+    - "CMC-M"
+    - "CMC-R"
+    - "CMC-S"
+  bone_classes:
+    - "Background"
+    - "Radius"
+    - "Ulna"
+    - "Carpal"
+    - "Metacarpal"
+    - "Phalanx"
+  erosion_classes:
+    - "Background"
+    - "Non-SvdH-BE"
+    - "SvdH-BE-50"
+    - "SvdH-BE-90"
+
+models:
+  classification:
+    architectures: ["efficientnet_b0", "efficientnet_b3", "densenet121", "resnet50"]
+    default_architecture: "densenet121"
+    num_classes: 2
+    learning_rate: 0.0003
+    batch_size: 8
+    epochs: 15
+    checkpoint_path: "models/classification/best_model.pth"
+    metadata_path: "models/classification/metadata.json"
+
+  detection:
+    architecture: "yolov8n"
+    num_classes: 22
+    conf_threshold: 0.25
+    iou_threshold: 0.45
+    epochs: 20
+    checkpoint_path: "models/detection/best.pt"
+    metadata_path: "models/detection/metadata.json"
+
+  segmentation:
+    architectures: ["unet", "unetplusplus"]
+    default_architecture: "unet"
+    in_channels: 1
+    num_classes: 4
+    learning_rate: 0.0005
+    batch_size: 4
+    epochs: 15
+    checkpoint_path: "models/segmentation/best_model.pth"
+    metadata_path: "models/segmentation/metadata.json"
+
+  severity:
+    architecture: "svdh_multitask_resnet"
+    be_max_per_joint: 5
+    jsn_max_per_joint: 4
+    num_be_joints: 16
+    num_jsn_joints: 15
+    learning_rate: 0.0003
+    batch_size: 8
+    epochs: 15
+    checkpoint_path: "models/severity/best_model.pth"
+    metadata_path: "models/severity/metadata.json"
+
+mlflow:
+  tracking_uri: "experiments/mlruns"
+  experiment_name: "ram_h1200_rheumatology_ai"
+
+backend:
+  host: "0.0.0.0"
+  port: 8000
+  database_url: "sqlite:///./xray_rheumatology.db"
+  storage_dir: "storage"
+  reports_dir: "reports"
+  max_upload_size_mb: 25
+  allowed_extensions: [".jpg", ".jpeg", ".png", ".bmp", ".dcm", ".dicom"]

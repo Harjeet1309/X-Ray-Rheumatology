@@ -1,0 +1,5 @@
+image_stem,file_name,image_path,patient_id,center,is_ra,sex,age,hand_side,total_be_score,total_jsn_score,total_svdh_score,split
+JP_HMCRD_P0101_20210613_3770_L,JP_HMCRD_P0101_20210613_3770_L.bmp,dataset/raw/Segmentation/val/JP_HMCRD_P0101_20210613_3770_L.bmp,JP_HMCRD_P0101,HMCRD,1,F,61,L,30,25,55,val
+JP_HMCRD_P0101_20210613_3770_R,JP_HMCRD_P0101_20210613_3770_R.bmp,dataset/raw/Segmentation/val/JP_HMCRD_P0101_20210613_3770_R.bmp,JP_HMCRD_P0101,HMCRD,1,F,61,R,26,27,53,val
+JP_SARC_P0102_20200503_8272_L,JP_SARC_P0102_20200503_8272_L.bmp,dataset/raw/Segmentation/val/JP_SARC_P0102_20200503_8272_L.bmp,JP_SARC_P0102,SARC,0,F,47,L,0,0,0,val
+JP_SARC_P0102_20200503_8272_R,JP_SARC_P0102_20200503_8272_R.bmp,dataset/raw/Segmentation/val/JP_SARC_P0102_20200503_8272_R.bmp,JP_SARC_P0102,SARC,0,F,47,R,0,0,0,val

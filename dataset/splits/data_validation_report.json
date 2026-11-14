@@ -1,0 +1,60 @@
+{
+  "corrupted_images_count": 0,
+  "corrupted_images": [],
+  "duplicate_images_count": 0,
+  "duplicate_images": [],
+  "missing_annotations_count": 0,
+  "missing_annotations": [],
+  "split_image_counts": {
+    "train": 12,
+    "val": 4,
+    "test": 4
+  },
+  "split_patient_counts": {
+    "train": 6,
+    "val": 2,
+    "test": 2
+  },
+  "patient_leakage": {
+    "train_val_overlap": [],
+    "train_test_overlap": [],
+    "val_test_overlap": [],
+    "passed_zero_leakage": true
+  },
+  "class_distribution": {
+    "RA_positive": 10,
+    "RA_negative": 10,
+    "total": 20,
+    "ra_ratio": 0.5
+  },
+  "annotation_completeness": {
+    "train": {
+      "num_images": 12,
+      "num_bone_annotated": 12,
+      "num_be_scored": 12,
+      "num_jsn_scored": 12,
+      "has_be_rle": true
+    },
+    "val": {
+      "num_images": 4,
+      "num_bone_annotated": 4,
+      "num_be_scored": 4,
+      "num_jsn_scored": 4,
+      "has_be_rle": true
+    },
+    "test": {
+      "num_images": 4,
+      "num_bone_annotated": 4,
+      "num_be_scored": 4,
+      "num_jsn_scored": 4,
+      "has_be_rle": true
+    }
+  },
+  "dimension_summary": {
+    "total_checked": 20,
+    "unique_resolutions": [
+      "512x512"
+    ]
+  },
+  "validation_passed": true
+}

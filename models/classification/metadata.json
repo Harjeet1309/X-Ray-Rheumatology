@@ -1,0 +1,135 @@
+{
+  "model_name": "RA Radiographic Pattern Classifier",
+  "task": "classification",
+  "architecture": "resnet50",
+  "version": "1.0.0",
+  "dataset_version": "RAM-H1200-v1",
+  "checkpoint_path": "models/classification/best_model.pth",
+  "evaluation_metrics": {
+    "accuracy": 0.5,
+    "precision": 0.0,
+    "recall": 0.0,
+    "f1_score": 0.0,
+    "sensitivity": 0.0,
+    "specificity": 1.0,
+    "roc_auc": 0.5,
+    "pr_auc": 0.5833,
+    "confusion_matrix": {
+      "tn": 2,
+      "fp": 0,
+      "fn": 2,
+      "tp": 0
+    }
+  },
+  "candidate_comparison": {
+    "selection_protocol": "Weighted Clinical Utility (0.35*Sensitivity + 0.30*Specificity + 0.20*ROC_AUC + 0.15*F1)",
+    "selected_model": "resnet50",
+    "selected_composite_score": 0.4,
+    "candidates": [
+      {
+        "architecture": "resnet50",
+        "metrics": {
+          "accuracy": 0.5,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1_score": 0.0,
+          "sensitivity": 0.0,
+          "specificity": 1.0,
+          "roc_auc": 0.5,
+          "pr_auc": 0.5833,
+          "confusion_matrix": {
+            "tn": 2,
+            "fp": 0,
+            "fn": 2,
+            "tp": 0
+          }
+        },
+        "history": [
+          {
+            "epoch": 1,
+            "train_loss": 0.7882,
+            "val_accuracy": 0.5,
+            "val_roc_auc": 0.0
+          },
+          {
+            "epoch": 2,
+            "train_loss": 0.6038,
+            "val_accuracy": 0.5,
+            "val_roc_auc": 0.5
+          }
+        ],
+        "clinical_composite_score": 0.4
+      },
+      {
+        "architecture": "efficientnet_b0",
+        "metrics": {
+          "accuracy": 0.5,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1_score": 0.0,
+          "sensitivity": 0.0,
+          "specificity": 1.0,
+          "roc_auc": 0.5,
+          "pr_auc": 0.5,
+          "confusion_matrix": {
+            "tn": 2,
+            "fp": 0,
+            "fn": 2,
+            "tp": 0
+          }
+        },
+        "history": [
+          {
+            "epoch": 1,
+            "train_loss": 0.7024,
+            "val_accuracy": 0.5,
+            "val_roc_auc": 0.5
+          },
+          {
+            "epoch": 2,
+            "train_loss": 0.6738,
+            "val_accuracy": 0.5,
+            "val_roc_auc": 0.5
+          }
+        ],
+        "clinical_composite_score": 0.4
+      },
+      {
+        "architecture": "densenet121",
+        "metrics": {
+          "accuracy": 0.5,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1_score": 0.0,
+          "sensitivity": 0.0,
+          "specificity": 1.0,
+          "roc_auc": 0.0,
+          "pr_auc": 0.4167,
+          "confusion_matrix": {
+            "tn": 2,
+            "fp": 0,
+            "fn": 2,
+            "tp": 0
+          }
+        },
+        "history": [
+          {
+            "epoch": 1,
+            "train_loss": 0.6954,
+            "val_accuracy": 0.5,
+            "val_roc_auc": 0.0
+          },
+          {
+            "epoch": 2,
+            "train_loss": 0.8395,
+            "val_accuracy": 0.5,
+            "val_roc_auc": 0.0
+          }
+        ],
+        "clinical_composite_score": 0.3
+      }
+    ]
+  },
+  "training_duration_sec": 10.91,
+  "trained_at": "2026-11-14T14:03:21.325820+00:00"
+}

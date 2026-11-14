@@ -1,0 +1,36 @@
+{
+  "model_name": "Hand Bone & Erosion Segmentation Engine",
+  "task": "segmentation",
+  "architecture": "unetplusplus",
+  "version": "1.0.0",
+  "dataset_version": "RAM-H1200-v1",
+  "checkpoint_path": "models/segmentation/best_model.pth",
+  "evaluation_metrics": {
+    "dice": 0.1732,
+    "iou": 0.1699,
+    "precision": 0.67,
+    "recall": 0.5
+  },
+  "candidate_comparison": [
+    {
+      "architecture": "unet",
+      "metrics": {
+        "dice": 0.0209,
+        "iou": 0.0107,
+        "precision": 0.355,
+        "recall": 0.3371
+      }
+    },
+    {
+      "architecture": "unetplusplus",
+      "metrics": {
+        "dice": 0.1732,
+        "iou": 0.1699,
+        "precision": 0.67,
+        "recall": 0.5
+      }
+    }
+  ],
+  "training_duration_sec": 6.28,
+  "trained_at": "2026-11-14T14:03:29.777933+00:00"
+}

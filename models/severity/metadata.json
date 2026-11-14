@@ -1,0 +1,30 @@
+{
+  "model_name": "SvdH Radiographic Severity Scorer (BE + JSN)",
+  "task": "severity",
+  "architecture": "svdh_multitask_resnet18",
+  "version": "1.0.0",
+  "dataset_version": "RAM-H1200-v1",
+  "checkpoint_path": "models/severity/best_model.pth",
+  "evaluation_metrics": {
+    "mae": 1.0338,
+    "rmse": 1.1572,
+    "quadratic_weighted_kappa": 0.0063,
+    "ordinal_accuracy": 0.1854,
+    "be_joint_metrics": {
+      "mae": 1.0144,
+      "rmse": 1.1276,
+      "quadratic_weighted_kappa": 0.0094,
+      "ordinal_accuracy": 0.1875,
+      "within_one_accuracy": 0.8594
+    },
+    "jsn_joint_metrics": {
+      "mae": 1.0533,
+      "rmse": 1.1869,
+      "quadratic_weighted_kappa": 0.0032,
+      "ordinal_accuracy": 0.1833,
+      "within_one_accuracy": 0.8167
+    }
+  },
+  "training_duration_sec": 3.13,
+  "trained_at": "2026-11-14T14:03:33.015319+00:00"
+}

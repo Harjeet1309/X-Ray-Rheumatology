@@ -1,0 +1,48 @@
+{
+  "repo_id": "TokyoTechMagicYang/RAM-H1200-v1",
+  "gated": "auto",
+  "total_repository_files": 38421,
+  "total_full_hand_radiographs": 1200,
+  "total_unique_patients": 291,
+  "splits": {
+    "train": {
+      "num_images": 793,
+      "num_unique_patients": 154,
+      "centers": [
+        "HMCRD",
+        "HU1",
+        "HU2",
+        "HU3",
+        "SARC",
+        "SCGH"
+      ]
+    },
+    "val": {
+      "num_images": 140,
+      "num_unique_patients": 36,
+      "centers": [
+        "HMCRD",
+        "HU1",
+        "HU2",
+        "SARC",
+        "SCGH"
+      ]
+    },
+    "test": {
+      "num_images": 267,
+      "num_unique_patients": 101,
+      "centers": [
+        "HMCRD",
+        "HU2",
+        "SARC",
+        "SCGH"
+      ]
+    }
+  },
+  "patient_overlap": {
+    "train_val": 0,
+    "train_test": 0,
+    "val_test": 0,
+    "zero_leakage_verified": true
+  }
+}
